@@ -7,7 +7,7 @@ import main.java.project.staff.Transformable;
 
 public class Bottle extends Vessel implements Containable {
 
-    private double volume;
+    private double volume; //Зачем здесь эта переменная ?
     private boolean opened;
     private SparklingWater water;
 
@@ -17,9 +17,12 @@ public class Bottle extends Vessel implements Containable {
         water = new SparklingWater(riseTemperature);
 
         Bubble[] bubbleCount = new Bubble[(int) (volume * 10000)];
+        for (int i = 0; i < bubbleCount.length; i++) {
+            bubbleCount[i] = new Bubble("CO2");
+        }
+
         water.pump(bubbleCount);
         warm(temperature);
-        open();
     }
 
     @Override

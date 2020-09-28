@@ -15,11 +15,11 @@ public class SparklingWater extends Water {
 
     private void isOpened() {
         checkIsOpened();
-        try {
-            Thread.sleep(8000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(8000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         System.out.println("Starting method setOpened");
     }
 
