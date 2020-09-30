@@ -2,35 +2,40 @@ package main.java.project;
 
 import main.java.project.vessel.Bottle;
 import main.java.project.vessel.Stocktaking;
+import main.java.project.vessel.VesselBox;
 import main.java.project.vessel.Warehouse;
+
+import java.util.ArrayList;
 
 public class Runner {
     public static void main(String[] args) {
 
-//        Warehouse ob = new Warehouse(9);
-//        new Stocktaking(ob);
+        Factory factory = new Factory();
+        Warehouse warehouse = new Warehouse();
 
-        Bottle bottle1 = new Bottle(1.5, 5, 0.1);
+        warehouse.addBoxes(factory.createBoxWithBottle(9, 2));
 
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        System.out.println("Opening bottle1");
-        bottle1.open();
-
-        Bottle bottle2 = new Bottle(1.5, 22, 0);
-        System.out.println("Open bottle2");
-
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        System.out.println("Opening bottle2");
-        bottle2.open();
+//        Bottle bottle1 = new Bottle(1.5, 5, 0.1);
+//
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//
+//        System.out.println("Opening bottle1");
+//        bottle1.open();
+//
+//        Bottle bottle2 = new Bottle(1.5, 22, 0);
+//        System.out.println("Open bottle2");
+//
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//
+//        System.out.println("Opening bottle2");
+//        bottle2.open();
     }
 }

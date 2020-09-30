@@ -1,25 +1,18 @@
 package main.java.project.vessel;
 
 import java.io.Serializable;
-import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 public class Warehouse implements Serializable {
 
-    private VesselBox<Bottle> bottle;
-    private VesselBox<Cup> cup;
+    ArrayList<VesselBox<Bottle>> bottle = new ArrayList<>();
+    ArrayList<VesselBox<Cup>> cup = new ArrayList<>();
 
-    public Warehouse(int number) {
-        this.bottle = new VesselBox<Bottle>(new Bottle[number]);
-        this.cup = new VesselBox<Cup>(new Cup[number]);
-
-        Field[] fields = Warehouse.class.getDeclaredFields();
-        for (Field field : fields) {
-            System.out.println(field.getName());
-        }
+    public void addBoxes(ArrayList<VesselBox<Bottle>> boxes) {
+        bottle.addAll(boxes);
     }
 
-//    private static void bottleAndCupCreater(int number) {
-//        Warehouse bottleAndCup = new Warehouse(number);
-//    }
-
+    public void addCups(ArrayList<VesselBox<Cup>> cups) {
+        cup.addAll(cups);
+    }
 }
