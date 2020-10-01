@@ -8,6 +8,10 @@ public class Warehouse implements Serializable {
     ArrayList<VesselBox<Bottle>> bottle = new ArrayList<>();
     ArrayList<VesselBox<Cup>> cup = new ArrayList<>();
 
+    public ArrayList<VesselBox<Bottle>> getBottle() {
+        return bottle;
+    }
+
     public void addBoxes(ArrayList<VesselBox<Bottle>> boxes) {
         bottle.addAll(boxes);
     }

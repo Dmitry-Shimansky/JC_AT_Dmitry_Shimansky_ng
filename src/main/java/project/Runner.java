@@ -4,7 +4,6 @@ import main.java.project.vessel.Bottle;
 import main.java.project.vessel.Stocktaking;
 import main.java.project.vessel.VesselBox;
 import main.java.project.vessel.Warehouse;
-
 import java.util.ArrayList;
 
 public class Runner {
@@ -14,6 +13,10 @@ public class Runner {
         Warehouse warehouse = new Warehouse();
 
         warehouse.addBoxes(factory.createBoxWithBottle(9, 2));
+        warehouse.addCups(factory.createBoxWithCup(25,3));
+
+        Stocktaking.Inventory(warehouse.getBottle());
+
 
 //        Bottle bottle1 = new Bottle(1.5, 5, 0.1);
 //

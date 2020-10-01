@@ -12,7 +12,7 @@ public class Bottle extends Vessel implements Containable {
     private SparklingWater water;
 
     public Bottle(double volume, int temperature, double riseTemperature) {
-        super(volume, temperature, riseTemperature, riseTemperature, 2.5, 1, new Glass(1.1,"transparent",1.5));
+        super(volume, temperature, riseTemperature, riseTemperature, 2.5, 1);
 
         water = new SparklingWater(riseTemperature);
 

@@ -2,7 +2,9 @@ package main.java.project;
 
 import main.java.project.staff.Water;
 
-public class SparklingWater extends Water {
+import java.io.Serializable;
+
+public class SparklingWater extends Water implements Serializable {
 
     private boolean isOpened;
     private Bubble[] bubbles;

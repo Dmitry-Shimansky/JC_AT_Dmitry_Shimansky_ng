@@ -1,6 +1,8 @@
 package main.java.project;
 
-public class Bubble {
+import java.io.Serializable;
+
+public class Bubble implements Serializable {
 
     private final double VOLUME = 0.3;
     private String gas = "CO2";

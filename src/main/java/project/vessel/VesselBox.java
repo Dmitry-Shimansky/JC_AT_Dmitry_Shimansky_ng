@@ -1,16 +1,21 @@
 package main.java.project.vessel;
 
 import main.java.project.material.Material;
+
 import java.io.Serializable;
 
 public class VesselBox<T> implements Serializable {
 
     private T[] container;
 
-    public VesselBox(T[]container) {
+    public VesselBox(T[] container) {
         this.container = container;
-        }
     }
+
+    public Integer getItemsCount() {
+        return container.length;
+    }
+}
 
 //class Transmiter extends Vessel {
 //    public Transmiter(double volume, int temperature, double v, double riseTemperature, double diameter, int weight, Material material) {

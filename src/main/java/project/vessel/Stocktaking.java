@@ -2,13 +2,14 @@ package main.java.project.vessel;
 
 import java.io.*;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 public class Stocktaking {
     //Создать класс Stocktaking, который записывает информацию о этих VesselBox обьектах в файл.
 
-    public Stocktaking(Warehouse warehouse) {
+    public static void Inventory(ArrayList<VesselBox<Bottle>> boxes) {
         folderCreator("/Users/DmitryShimansky/Desktop/Stocktaking");
-        fileCreator("/Users/DmitryShimansky/Desktop/Stocktaking/Stocktaking", warehouse);
+        fileCreator("/Users/DmitryShimansky/Desktop/Stocktaking/Stocktaking", boxes);
         try {
             fileReader("/Users/DmitryShimansky/Desktop/Stocktaking/Stocktaking");
         } catch (ClassNotFoundException e) {
@@ -16,37 +17,34 @@ public class Stocktaking {
         }
     }
 
-    private void folderCreator(String folder) {
+    private static void folderCreator(String folder) {
 
         File newDir = new File(folder);
 
-//        boolean created = newDir.mkdir();
-
-            System.out.println("Folder has been created: " + newDir.mkdir() + folder);
-
+        System.out.println("Folder has been created: " + newDir.mkdir() + folder);
     }
 
-    private void fileCreator(String fileAndFolder, Warehouse warehouse) {
+    private static void fileCreator(String fileAndFolder, ArrayList<VesselBox<Bottle>> boxes) {
 
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileAndFolder))) {
-            oos.writeObject(warehouse);
+            oos.writeObject(boxes);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private void fileReader(String fileAndFolder) throws ClassNotFoundException {
+    private static void fileReader(String fileAndFolder) throws ClassNotFoundException {
 
+        ArrayList<VesselBox<Bottle>> newBoxes;
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileAndFolder))) {
 
-            Warehouse warehouse = (Warehouse) ois.readObject();
-            System.out.println("Тип объекта: " + warehouse.getClass());
+            newBoxes = ((ArrayList<VesselBox<Bottle>>) ois.readObject());
+            System.out.println("Имеем ящиком: " + newBoxes.size());
 
-            Field[] fields = Warehouse.class.getDeclaredFields();
+            newBoxes.forEach(bottleVesselBox -> {
+                System.out.println("Я коробка и у меня " + bottleVesselBox.getItemsCount() + " бутылок");
+            });
 
-            for (Field field : fields) {
-                System.out.println(field.getName());
-            }
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -4,8 +4,8 @@ import main.java.project.material.Material;
 import main.java.project.staff.Transformable;
 
 public class Can extends Vessel implements Containable {
-    public Can(double volume, int temperature, double riseTemperature, double volume1, double diameter, int weight, Material material) {
-        super(volume, temperature, riseTemperature, volume1, diameter, weight, material);
+    public Can(double volume, int temperature, double riseTemperature, double volume1, double diameter, int weight) {
+        super(volume, temperature, riseTemperature, volume1, diameter, weight);
     }
 
     @Override
