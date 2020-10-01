@@ -12,6 +12,10 @@ public class Warehouse implements Serializable {
         return bottle;
     }
 
+    public ArrayList<VesselBox<Cup>> getCup() {
+        return cup;
+    }
+
     public void addBoxes(ArrayList<VesselBox<Bottle>> boxes) {
         bottle.addAll(boxes);
     }

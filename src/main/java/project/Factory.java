@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Factory {
 
-    public ArrayList<VesselBox<Bottle>> createBoxWithBottle (int vesselCount, int boxCount){
+    public ArrayList<VesselBox<Bottle>> createBoxWithBottle(int vesselCount, int boxCount) {
 
         ArrayList<VesselBox<Bottle>> container = new ArrayList<>(boxCount);
 
@@ -17,7 +17,7 @@ public class Factory {
         return container;
     }
 
-    public ArrayList<VesselBox<Cup>> createBoxWithCup (int vesselCount, int boxCount) {
+    public ArrayList<VesselBox<Cup>> createBoxWithCup(int vesselCount, int boxCount) {
 
         ArrayList<VesselBox<Cup>> container = new ArrayList<>(boxCount);
 

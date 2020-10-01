@@ -15,8 +15,8 @@ public class Runner {
         warehouse.addBoxes(factory.createBoxWithBottle(9, 2));
         warehouse.addCups(factory.createBoxWithCup(25,3));
 
-        Stocktaking.Inventory(warehouse.getBottle());
-
+        Stocktaking.InventoryBottles(warehouse.getBottle());
+        Stocktaking.InventoryCups(warehouse.getCup());
 
 //        Bottle bottle1 = new Bottle(1.5, 5, 0.1);
 //
