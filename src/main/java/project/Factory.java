@@ -27,21 +27,39 @@ public class Factory {
         return container;
     }
 
-    private Bottle[] addBottle(int count) {
-        Bottle[] containerOfBottle = new Bottle[count];
-        for (int i = 0; i < containerOfBottle.length; i++) {
-            containerOfBottle[i] = new Bottle(0.5, 5, 0);
+    private ArrayList<Bottle> addBottle(int count) {
+        ArrayList<Bottle> containerOfBottle = new ArrayList<>(count);
+        for (int i = 0; i < count; i++) {
+            containerOfBottle.add(new Bottle(0.5, 5, 0));
         }
         System.out.println("Add " + count + " of bottles");
         return containerOfBottle;
     }
 
-    private Cup[] addCup(int count) {
-        Cup[] containerOfCup = new Cup[count];
-        for (int i = 0; i < containerOfCup.length; i++) {
-            containerOfCup[i] = new Cup(0.25, 5, 0, 0, 10, 100);
+//    private Bottle[] addBottle(int count) {
+//        Bottle[] containerOfBottle = new Bottle[count];
+//        for (int i = 0; i < containerOfBottle.length; i++) {
+//            containerOfBottle[i] = new Bottle(0.5, 5, 0);
+//        }
+//        System.out.println("Add " + count + " of bottles");
+//        return containerOfBottle;
+//    }
+
+    private ArrayList<Cup> addCup(int count) {
+        ArrayList<Cup> containerOfCup = new ArrayList<>(count);
+        for (int i = 0; i < count; i++) {
+            containerOfCup.add(new Cup(0.25, 5, 0, 0, 10, 100));
         }
         System.out.println("Add " + count + " of cups");
         return containerOfCup;
     }
+
+//    private Cup[] addCup(int count) {
+//        Cup[] containerOfCup = new Cup[count];
+//        for (int i = 0; i < containerOfCup.length; i++) {
+//            containerOfCup[i] = new Cup(0.25, 5, 0, 0, 10, 100);
+//        }
+//        System.out.println("Add " + count + " of cups");
+//        return containerOfCup;
+//    }
 }

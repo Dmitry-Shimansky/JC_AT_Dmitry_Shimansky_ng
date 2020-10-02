@@ -1,9 +1,10 @@
 package main.java.project.vessel;
 
 import main.java.project.Bubble;
-import main.java.project.material.Glass;
 import main.java.project.SparklingWater;
 import main.java.project.staff.Transformable;
+
+import java.util.ArrayList;
 
 public class Bottle extends Vessel implements Containable {
 
@@ -16,10 +17,16 @@ public class Bottle extends Vessel implements Containable {
 
         water = new SparklingWater(riseTemperature);
 
-        Bubble[] bubbleCount = new Bubble[(int) (volume * 10000)];
-        for (int i = 0; i < bubbleCount.length; i++) {
-            bubbleCount[i] = new Bubble("CO2");
+        ArrayList<Bubble> bubbleCount = new ArrayList<Bubble>((int) (volume * 10000));
+        for (int i = 0; i < (int) (volume * 10000); i++) {
+            System.out.print(i);
+            bubbleCount.add(new Bubble("CO2"));
         }
+
+//        Bubble[] bubbleCount = new Bubble[(int) (volume * 10000)];
+//        for (int i = 0; i < bubbleCount.length; i++) {
+//            bubbleCount[i] = new Bubble("CO2");
+//        }
 
         water.pump(bubbleCount);
         warm(temperature);
