@@ -9,7 +9,7 @@ public class Bubble implements Serializable {
 
     public Bubble(String gas) {
         this.gas = gas;
-        System.out.println(String.format(" bubbles: %s add", gas));
+        System.out.println(String.format(" bubbles: %s added", gas));
     }
 
     public static void cramp() {

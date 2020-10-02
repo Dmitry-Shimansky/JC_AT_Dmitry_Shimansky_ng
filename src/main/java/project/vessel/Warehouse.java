@@ -5,22 +5,22 @@ import java.util.ArrayList;
 
 public class Warehouse implements Serializable {
 
-    ArrayList<VesselBox<Bottle>> bottle = new ArrayList<>();
-    ArrayList<VesselBox<Cup>> cup = new ArrayList<>();
+    ArrayList<VesselBox<Bottle>> boxesWithBottle = new ArrayList<>();
+    ArrayList<VesselBox<Cup>> boxesWithCup = new ArrayList<>();
 
-    public ArrayList<VesselBox<Bottle>> getBottle() {
-        return bottle;
+    public ArrayList<VesselBox<Bottle>> getBoxesWithBottle() {
+        return boxesWithBottle;
     }
 
-    public ArrayList<VesselBox<Cup>> getCup() {
-        return cup;
+    public ArrayList<VesselBox<Cup>> getBoxesWithCup() {
+        return boxesWithCup;
     }
 
     public void addBoxes(ArrayList<VesselBox<Bottle>> boxes) {
-        bottle.addAll(boxes);
+        boxesWithBottle.addAll(boxes);
     }
 
     public void addCups(ArrayList<VesselBox<Cup>> cups) {
-        cup.addAll(cups);
+        boxesWithCup.addAll(cups);
     }
 }

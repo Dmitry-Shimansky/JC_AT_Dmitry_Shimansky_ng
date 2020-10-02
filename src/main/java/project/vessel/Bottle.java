@@ -19,7 +19,7 @@ public class Bottle extends Vessel implements Containable {
 
         ArrayList<Bubble> bubbleCount = new ArrayList<Bubble>((int) (volume * 10000));
         for (int i = 0; i < (int) (volume * 10000); i++) {
-            System.out.print(i);
+            System.out.print(i + 1);
             bubbleCount.add(new Bubble("CO2"));
         }
 

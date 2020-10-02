@@ -11,6 +11,10 @@ public class VesselBox<T> implements Serializable {
         this.container = container;
     }
 
+    public ArrayList<T> getContainer() {
+        return container;
+    }
+
     public Integer getItemsCount() {
         return container.size();
     }
