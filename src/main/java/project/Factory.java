@@ -30,7 +30,7 @@ public class Factory {
     private ArrayList<Bottle> addBottle(int count) {
         ArrayList<Bottle> containerOfBottle = new ArrayList<>(count);
         for (int i = 0; i < count; i++) {
-            containerOfBottle.add(new Bottle(0.5, 5, 0));
+            containerOfBottle.add(new Bottle(0.5, 5, 0.1));
         }
         System.out.println("Add " + count + " of bottles");
         return containerOfBottle;

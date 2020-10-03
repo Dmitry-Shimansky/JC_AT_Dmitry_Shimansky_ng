@@ -19,12 +19,10 @@ public class Runner {
         Stocktaking.InventoryBottles(warehouse.getBoxesWithBottle());
         Stocktaking.InventoryCups(warehouse.getBoxesWithCup());
 
-        for (VesselBox<Bottle> bottleVesselBox : warehouse.getBoxesWithBottle()) {
-            ArrayList<Bottle> container = bottleVesselBox.getContainer();
-            for (Bottle bottle : container) {
-                bottle.open();
-            }
-        }
+        warehouse.getBoxesWithBottle().stream()
+                .map(VesselBox::getContainer)
+                .flatMap(Collection::stream)
+                .forEach(Bottle::open);
 
 
 //        Bottle bottle1 = new Bottle(1.5, 5, 0.1);
