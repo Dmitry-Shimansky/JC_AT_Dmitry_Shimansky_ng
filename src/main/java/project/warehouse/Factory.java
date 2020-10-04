@@ -1,11 +1,15 @@
-package main.java.project;
+package main.java.project.warehouse;
 
 import main.java.project.vessel.Bottle;
 import main.java.project.vessel.Cup;
-import main.java.project.vessel.VesselBox;
+
 import java.util.ArrayList;
 
 public class Factory {
+    //createVesselBox
+    //addVesselBox
+    //storeBox
+    //createVessels
 
     public ArrayList<VesselBox<Bottle>> createBoxWithBottle(int vesselCount, int boxCount) {
 

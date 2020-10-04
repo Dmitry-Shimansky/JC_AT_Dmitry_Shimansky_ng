@@ -1,4 +1,7 @@
-package main.java.project.vessel;
+package main.java.project.warehouse;
+
+import main.java.project.vessel.Bottle;
+import main.java.project.vessel.Cup;
 
 import java.io.Serializable;
 import java.util.ArrayList;

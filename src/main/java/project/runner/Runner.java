@@ -1,10 +1,11 @@
-package main.java.project;
+package main.java.project.runner;
 
+import main.java.project.warehouse.Factory;
 import main.java.project.vessel.Bottle;
-import main.java.project.vessel.Stocktaking;
-import main.java.project.vessel.VesselBox;
-import main.java.project.vessel.Warehouse;
-import java.util.ArrayList;
+import main.java.project.warehouse.Stocktaking;
+import main.java.project.warehouse.VesselBox;
+import main.java.project.warehouse.Warehouse;
+
 import java.util.Collection;
 
 public class Runner {

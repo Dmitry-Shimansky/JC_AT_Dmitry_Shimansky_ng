@@ -1,8 +1,8 @@
 package main.java.project.vessel;
 
-import main.java.project.Bubble;
-import main.java.project.SparklingWater;
-import main.java.project.staff.Transformable;
+import main.java.project.stuff.Bubble;
+import main.java.project.stuff.SparklingWater;
+import main.java.project.stuff.Transformable;
 
 import java.util.ArrayList;
 

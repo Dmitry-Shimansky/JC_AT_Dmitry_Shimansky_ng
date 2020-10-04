@@ -1,4 +1,4 @@
-package main.java.project.staff;
+package main.java.project.stuff;
 
 public class Sand implements Transformable {
     @Override

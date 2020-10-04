@@ -1,6 +1,5 @@
-package main.java.project;
+package main.java.project.stuff;
 
-import main.java.project.staff.Water;
 import java.io.Serializable;
 import java.util.ArrayList;
 

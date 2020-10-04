@@ -1,7 +1,6 @@
 package main.java.project.vessel;
 
-import main.java.project.material.Material;
-import main.java.project.staff.Transformable;
+import main.java.project.stuff.Transformable;
 
 public class Can extends Vessel implements Containable {
     public Can(double volume, int temperature, double riseTemperature, double volume1, double diameter, int weight) {

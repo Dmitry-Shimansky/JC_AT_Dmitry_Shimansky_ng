@@ -1,10 +1,14 @@
-package main.java.project.vessel;
+package main.java.project.warehouse;
+
+import main.java.project.vessel.Bottle;
+import main.java.project.vessel.Cup;
 
 import java.io.*;
 import java.util.ArrayList;
 
 public class Stocktaking {
     //Создать класс Stocktaking, который записывает информацию о этих VesselBox обьектах в файл.
+    //Создать private конструкор
 
     public static void InventoryBottles (ArrayList<VesselBox<Bottle>> boxes) {
         folderCreator("/Users/DmitryShimansky/Desktop/Stocktaking");
