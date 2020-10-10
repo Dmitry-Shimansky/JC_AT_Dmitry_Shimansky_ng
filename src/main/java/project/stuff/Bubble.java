@@ -1,13 +1,15 @@
-package main.java.project;
+package main.java.project.stuff;
 
-public class Bubble {
+import java.io.Serializable;
+
+public class Bubble implements Serializable {
 
     private final double VOLUME = 0.3;
     private String gas = "CO2";
 
     public Bubble(String gas) {
         this.gas = gas;
-        System.out.println(String.format("Add gas to bubbles: %s", gas));
+        System.out.println(String.format(" bubbles: %s added", gas));
     }
 
     public static void cramp() {

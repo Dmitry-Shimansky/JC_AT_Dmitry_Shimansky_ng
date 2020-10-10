@@ -11,6 +11,10 @@ public abstract class Material {
         this.density = density;
     }
 
+    public Material() {
+
+    }
+
     public double getThermalConductivity() {
         return thermalConductivity;
     }

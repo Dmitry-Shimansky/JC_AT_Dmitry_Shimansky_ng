@@ -1,11 +1,12 @@
-package main.java.project;
+package main.java.project.stuff;
 
-import main.java.project.staff.Water;
+import java.io.Serializable;
+import java.util.ArrayList;
 
-public class SparklingWater extends Water {
+public class SparklingWater extends Water implements Serializable {
 
     private boolean isOpened;
-    private Bubble[] bubbles;
+    private ArrayList<Bubble> bubbles;
     double riseTemperature = 0;
 
     public SparklingWater(double riseTemperature) {
@@ -15,15 +16,15 @@ public class SparklingWater extends Water {
 
     private void isOpened() {
         checkIsOpened();
-        try {
-            Thread.sleep(8000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(8000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         System.out.println("Starting method setOpened");
     }
 
-    public void pump(Bubble[] bubbles) {
+    public void pump(ArrayList<Bubble> bubbles) {
         this.bubbles = bubbles;
         System.out.println("Pumped bubbles into water");
     }
@@ -55,7 +56,7 @@ public class SparklingWater extends Water {
         double bubbleSpent = 0;
         int spentTime = 0;
 
-        while (bubbleSpent <= bubbles.length) {
+        while (bubbleSpent <= bubbles.size()) {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -66,7 +67,7 @@ public class SparklingWater extends Water {
 
             Bubble.cramp();
             System.out.println("Пузырьков вышло: " + bubbleSpent);
-            System.out.println("Пузырьков осталось: " + (bubbles.length - bubbleSpent));
+            System.out.println("Пузырьков осталось: " + (bubbles.size() - bubbleSpent));
             System.out.println("Время: " + spentTime + " сек");
         }
         System.out.println("");

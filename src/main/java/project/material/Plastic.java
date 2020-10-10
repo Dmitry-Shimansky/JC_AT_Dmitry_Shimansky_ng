@@ -1,7 +1,14 @@
 package main.java.project.material;
 
-public class Plastic extends Material {
+import java.io.Serializable;
+
+public class Plastic extends Material implements Serializable {
     public Plastic(double thermalConductivity, String color, double density) {
         super(thermalConductivity, color, density);
+    }
+
+    public Plastic() {
+        super();
+
     }
 }
