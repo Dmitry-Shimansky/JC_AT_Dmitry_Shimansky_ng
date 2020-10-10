@@ -7,7 +7,7 @@ public class VesselBox<T> implements Serializable {
 
     private ArrayList<T> container;
 
-    public VesselBox(ArrayList<T> container) {
+    public void fillVesselBox(ArrayList<T> container) {
         this.container = container;
     }
 

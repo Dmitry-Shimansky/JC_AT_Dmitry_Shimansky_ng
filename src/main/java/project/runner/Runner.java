@@ -1,5 +1,6 @@
 package main.java.project.runner;
 
+import main.java.project.vessel.Cup;
 import main.java.project.warehouse.Factory;
 import main.java.project.vessel.Bottle;
 import main.java.project.warehouse.Stocktaking;
@@ -9,21 +10,22 @@ import main.java.project.warehouse.Warehouse;
 import java.util.Collection;
 
 public class Runner {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalAccessException, InstantiationException {
 
         Factory factory = new Factory();
         Warehouse warehouse = new Warehouse();
 
-        warehouse.addBoxes(factory.createBoxWithBottle(9, 2));
-        warehouse.addCups(factory.createBoxWithCup(25,3));
+        warehouse.addBox(factory.addVesselBox(Bottle.class,9));
 
         Stocktaking.InventoryBottles(warehouse.getBoxesWithBottle());
-        Stocktaking.InventoryCups(warehouse.getBoxesWithCup());
 
-        warehouse.getBoxesWithBottle().stream()
-                .map(VesselBox::getContainer)
-                .flatMap(Collection::stream)
-                .forEach(Bottle::open);
+//        warehouse.getBoxesWithBottle().stream()
+//                .map(VesselBox::getContainer)
+//                .flatMap(Collection::stream)
+//                .forEach(Bottle::open);
+
+//        warehouse.getBoxesWithBottle().get(0).get(4).open();
+//        warehouse.getBoxesWithBottle().forEach(b ->b.get(4).open());
 
 
 //        Bottle bottle1 = new Bottle(1.5, 5, 0.1);

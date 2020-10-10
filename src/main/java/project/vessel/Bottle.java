@@ -1,5 +1,7 @@
 package main.java.project.vessel;
 
+import main.java.project.material.Material;
+import main.java.project.material.Plastic;
 import main.java.project.stuff.Bubble;
 import main.java.project.stuff.SparklingWater;
 import main.java.project.stuff.Transformable;
@@ -12,8 +14,8 @@ public class Bottle extends Vessel implements Containable {
     private boolean opened;
     private SparklingWater water;
 
-    public Bottle(double volume, int temperature, double riseTemperature) {
-        super(volume, temperature, riseTemperature, riseTemperature, 2.5, 1);
+    public Bottle(double volume, int temperature, double riseTemperature, double diameter, int weight, Material material) {
+        super(volume, diameter, weight, material);
 
         water = new SparklingWater(riseTemperature);
 
@@ -30,6 +32,10 @@ public class Bottle extends Vessel implements Containable {
 
         water.pump(bubbleCount);
         warm(temperature);
+    }
+
+    public Bottle() {
+        this(1, 5, 0.1, 1, 2, new Plastic(1, "purple", 1));
     }
 
     @Override

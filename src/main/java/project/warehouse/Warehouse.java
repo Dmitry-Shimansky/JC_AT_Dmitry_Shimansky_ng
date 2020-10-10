@@ -2,28 +2,29 @@ package main.java.project.warehouse;
 
 import main.java.project.vessel.Bottle;
 import main.java.project.vessel.Cup;
+import main.java.project.vessel.Vessel;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Warehouse implements Serializable {
+public class Warehouse<T extends Vessel> implements Serializable {
 
-    ArrayList<VesselBox<Bottle>> boxesWithBottle = new ArrayList<>();
-    ArrayList<VesselBox<Cup>> boxesWithCup = new ArrayList<>();
+    ArrayList<VesselBox<T>> boxesWithBottle = new ArrayList<>();
+//    ArrayList<VesselBox<Cup>> boxesWithCup = new ArrayList<>();
 
-    public ArrayList<VesselBox<Bottle>> getBoxesWithBottle() {
+    public ArrayList<VesselBox<T>> getBoxesWithBottle() {
         return boxesWithBottle;
     }
 
-    public ArrayList<VesselBox<Cup>> getBoxesWithCup() {
-        return boxesWithCup;
+//    public ArrayList<VesselBox<Cup>> getBoxesWithCup() {
+//        return boxesWithCup;
+//    }
+
+    public void addBox(VesselBox<T> box) {
+        boxesWithBottle.add(box);
     }
 
-    public void addBoxes(ArrayList<VesselBox<Bottle>> boxes) {
-        boxesWithBottle.addAll(boxes);
-    }
-
-    public void addCups(ArrayList<VesselBox<Cup>> cups) {
-        boxesWithCup.addAll(cups);
-    }
+//    public void addCups(ArrayList<VesselBox<Cup>> cups) {
+//        boxesWithCup.addAll(cups);
+//    }
 }
