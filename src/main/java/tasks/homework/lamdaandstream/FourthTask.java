@@ -1,7 +1,11 @@
 package main.java.tasks.homework.lamdaandstream;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class FourthTask {
@@ -11,17 +15,14 @@ public class FourthTask {
     // разделить на по <br>, оставить только те, что начинаются с "Date log:",
     // в каждой строке оставить только первые 20 символов, к каждой в конец дописать значение текущей даты
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-//        String fileName = "/Users/DmitryShimansky/Desktop/FourTask.txt";
-//
-//        //read file into stream, try-with-resources
-//        try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
-//
-//            stream.forEach(System.out::println);
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        Arrays.stream(
+                Files.lines(Paths.get("/Users/DmitryShimansky/Desktop/FourTask"))
+                        .skip(4)
+                        .collect(Collectors.joining()).split("<br>"))
+                .filter(s -> s.startsWith("Date log:"))
+                .peek(s -> s.substring(0,20).
+                        concat(LocalDate.now().toString()));
     }
 }
