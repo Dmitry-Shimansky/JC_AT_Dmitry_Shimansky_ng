@@ -8,7 +8,6 @@ public class Plastic extends Material implements Serializable {
     }
 
     public Plastic() {
-        super();
-
+        this(0.2,"white",1800);
     }
 }
