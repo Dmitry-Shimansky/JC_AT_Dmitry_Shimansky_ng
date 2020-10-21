@@ -17,13 +17,13 @@ public class Runner {
 
         warehouse.addBox(factory.addVesselBox(Bottle.class,9));
 
-        Stocktaking.InventoryBottles(warehouse.getBoxesWithBottle());
+        Stocktaking.InventoryVesselBoxes(warehouse.getBoxesWithVessels());
 
 //        warehouse.getBoxesWithBottle().stream()
 //                .map(VesselBox::getContainer)
 //                .flatMap(Collection::stream)
 //                .forEach(Bottle::open);
-
+//
 //        warehouse.getBoxesWithBottle().get(0).get(4).open();
 //        warehouse.getBoxesWithBottle().forEach(b ->b.get(4).open());
 

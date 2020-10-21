@@ -9,11 +9,11 @@ import java.util.ArrayList;
 
 public class Warehouse<T extends Vessel> implements Serializable {
 
-    ArrayList<VesselBox<T>> boxesWithBottle = new ArrayList<>();
+    ArrayList<VesselBox<T>> boxesWithVessels = new ArrayList<>();
 //    ArrayList<VesselBox<Cup>> boxesWithCup = new ArrayList<>();
 
-    public ArrayList<VesselBox<T>> getBoxesWithBottle() {
-        return boxesWithBottle;
+    public ArrayList<VesselBox<T>> getBoxesWithVessels() {
+        return boxesWithVessels;
     }
 
 //    public ArrayList<VesselBox<Cup>> getBoxesWithCup() {
@@ -21,7 +21,7 @@ public class Warehouse<T extends Vessel> implements Serializable {
 //    }
 
     public void addBox(VesselBox<T> box) {
-        boxesWithBottle.add(box);
+        boxesWithVessels.add(box);
     }
 
 //    public void addCups(ArrayList<VesselBox<Cup>> cups) {
